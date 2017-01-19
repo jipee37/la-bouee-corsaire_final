@@ -29,11 +29,11 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-3" align="center">
-							<img alt="avatar" src="/images/task.png"
+							<img alt="avatar" src="{{ asset('images/task.png') }}"
 							 class="avatar img-responsive">
 
 								{% if task.user == user %}
-									<a href="/task/edit/{{ task.id }}" data-original-title="Edition"
+									<a href="{{ path('task_edit', {'id': task.id}) }}" data-original-title="Edition"
 									 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
 										<i class="glyphicon glyphicon-edit"></i>
 										Édition
@@ -60,7 +60,7 @@
 
 				{% if task.user != user %}
 					<div class="panel-footer text-center">
-						<a href="/message/new/{{ task.id }}" class="btn btn-default">
+						<a href="{{ path('message_new', {'id': task.id}) }}" class="btn btn-default">
 							Se proposer pour remplir ce Besoin
 						</a>
 					</div>
@@ -70,6 +70,6 @@
 		</div>
 	</div>
 
-	<p><a href='/task/list'>Retour à la liste des Besoins</a></p>
+	<p><a href="{{ path('task_list') }}">Retour à la liste des Besoins</a></p>
 
 {% endblock %}

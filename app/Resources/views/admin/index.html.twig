@@ -12,14 +12,14 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Administration</div>
 				<div class="panel-body">
-					<p><a href="user/list">Utilisateurs</a></p>
+					<p><a href="{{ path('admin_user_list') }}">Utilisateurs</a></p>
 				</div>
 			</div>
 		</div>
 
 		<div class="col-md-6">
-			<p><a href="/profile" class="btn btn-default">Profil du compte</a></p>
-			<p><a href="/logout" class="btn btn-default">Déconnexion</a></p>
+			<p><a href="{{ path('user_profile') }}" class="btn btn-default">Profil du compte</a></p>
+			<p><a href="{{ logout_path() }}" class="btn btn-default">Déconnexion</a></p>
 		</div>
 
 	</div>

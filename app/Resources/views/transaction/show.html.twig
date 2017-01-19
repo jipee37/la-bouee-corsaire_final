@@ -35,7 +35,7 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-3" align="center">
-							<img alt="avatar" src="/images/task.png"
+							<img alt="avatar" src="{{ asset('images/task.png') }}"
 							 class="avatar img-responsive">
 
 						</div>
@@ -73,7 +73,7 @@
 						<div class="panel panel-default">
 
 							<div class="panel-heading">
-								<a href="/message/show/{{ message.id }}">
+								<a href="{{ path('message_show', {'id': message.id}) }}">
 									Message envoyé par {{ message.author }}
 									à {{ message.dest }}
 									le {{ message.date.format('j/m/Y à G:i') }}
@@ -93,13 +93,13 @@
 		</section>
 
 		<div class="col-lg-12">
-			<a href="/transaction/list">Retour à la liste</a>
+			<a href="{{ path('transaction_list') }}">Retour à la liste</a>
 		</div>
 
 		{% if (transaction.task.user == user)
 		  and (transaction.status == '1') %}
 			<div class="col-lg-12">
-				<a href="/transaction/close/{{ transaction.id }}" class="btn btn-default">Confirmer que le Besoin a été rempli</a>
+				<a href="{{ path('transaction_close', {'id': transaction.id}) }}" class="btn btn-default">Confirmer que le Besoin a été rempli</a>
 			</div>
 		{% endif %}
 

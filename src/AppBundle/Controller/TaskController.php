@@ -78,7 +78,7 @@
 		/**
 		 * Show a form allowing creation of a new Task owned by the current User
 		 *
-		 * @Route("/new")
+		 * @Route("/new", name="task_new")
 		 *
 		 * @param Request $request
 		 *
@@ -110,7 +110,7 @@
 		/**
 		 * Show full list of Tasks
 		 *
-		 * @Route("/list")
+		 * @Route("/list", name="task_list")
 		 *
 		 * @return Response
 		 */
@@ -132,7 +132,7 @@
 		/**
 		 * Show list of Tasks owned by current User
 		 *
-		 * @Route("/list-owned")
+		 * @Route("/list-owned", name="task_list_owned")
 		 *
 		 * @return Response
 		 */
@@ -169,7 +169,7 @@
 		/**
 		 * Show a form allowing edition of the Task identified by the given ID
 		 *
-		 * @Route("/edit/{id}")
+		 * @Route("/edit/{id}", name="task_edit")
 		 *
 		 * @param Request $request
 		 * @param int     $id
@@ -226,7 +226,7 @@
 		/**
 		 * Enable the Task identified by the given ID
 		 *
-		 * @Route("/open/{id}")
+		 * @Route("/open/{id}", name="task_open")
 		 *
 		 * @param Request $request
 		 * @param int     $id

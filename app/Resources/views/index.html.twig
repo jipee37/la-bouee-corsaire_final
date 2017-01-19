@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="home-search">
 			<div class="col-xs-4 col-xs-offset-4 text-center">
-				<a href="/task/list"><h2><strong>Liste complète des Besoins</strong></h2></a>
+				<a href="{{ path('task_list') }}"><h2><strong>Liste complète des Besoins</strong></h2></a>
 			</div>
 		</div>
 	</div>
@@ -18,8 +18,8 @@
 								  {% for task in tasks1 %}
 	          <div class="col-sm-6 col-md-4">
 
-	            <a href="/task/show/{{ task.id }}" class="thumbnail">
-	              <img src="images/task.png" alt="...">
+	            <a href="{{ path('task_show', {'id': task.id}) }}" class="thumbnail">
+	              <img src="{{ asset('images/task.png') }}" alt="...">
 	              <div class="caption">
 	                <h3>{{ task.title }}</h3>
 	                <p>{{ task.location }}</p>
@@ -30,8 +30,8 @@
 
 {% for task in tasks2 %}
 	          <div class="col-sm-6 col-md-4">
-						<a href="/task/show/{{ task.id }}" class="thumbnail">
-						<img src="images/task.png" alt="...">
+						<a href="{{ path('task_show', {'id': task.id}) }}" class="thumbnail">
+						<img src="{{ asset('images/task.png') }}" alt="...">
 						<div class="caption">
 							<h3>{{ task.title }}</h3>
 							<p>{{ task.location }}</p>
@@ -55,7 +55,7 @@
 	                              <h2 class="text-center">Le fonctionnement</h2>
 	                              <!--Illustration 1-->
 	                              <div class="col-md-3 text-center">
-	                                  <img src="images/man.png" alt="" />
+	                                  <img src="{{ asset('images/man.png') }}" alt="" />
 	                                  <h3>Michael</h3>
 	                              </div>
 	                              <div class="col-md-6 text-center">
@@ -64,13 +64,13 @@
 	                                      non plus. Mais il peut proposer de réparer l'ordinateur pour une durée estimée à deux heures. Certes il n'est pas expert dans le domaine, mais se juge être à un niveau avancé.
 	                                  </p>
 
-	                                  <img src="images/stopwatch.png" alt="" />
-	                                  <img src="images/no-dollars-accepted.png" alt="" />
-	                                  <img src="images/wrenches.png" alt="" />
-	                                  <img src="images/hourglass.png" alt="" />
+	                                  <img src="{{ asset('images/stopwatch.png') }}" alt="" />
+	                                  <img src="{{ asset('images/no-dollars-accepted.png') }}" alt="" />
+	                                  <img src="{{ asset('images/wrenches.png') }}" alt="" />
+	                                  <img src="{{ asset('images/hourglass.png') }}" alt="" />
 	                              </div>
 	                              <div class="col-md-3 text-center">
-	                                  <img src="images/girl.png" class="image-responsive" alt="" />
+	                                  <img src="{{ asset('images/girl.png') }}" class="image-responsive" alt="" />
 	                                  <h3>Anne</h3>
 	                              </div>
 	                          </div>

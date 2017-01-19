@@ -15,7 +15,7 @@
 		/**
 		 * Renders summary of administration tasks
 		 *
-		 * @Route("/")
+		 * @Route("/", name="admin_home")
 		 */
 		public function indexAction() {
 			return $this->render('admin/index.html.twig');

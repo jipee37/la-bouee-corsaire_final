@@ -7,6 +7,7 @@
 	use FOS\UserBundle\Event\GetResponseUserEvent;
 	use FOS\UserBundle\FOSUserEvents;
 	use FOS\UserBundle\Controller\ProfileController as BaseController;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 	use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 	use Symfony\Component\HttpFoundation\RedirectResponse;
 	use Symfony\Component\HttpFoundation\Request;
@@ -19,7 +20,26 @@
 	class ProfileController extends BaseController {
 
 		/**
+		* Show the user.
+		*
+		* @Route("/profile", name="user_profile")
+		*
+		*/
+		public function showAction() {
+			$user = $this->getUser();
+			if (!is_object($user) || !$user instanceof UserInterface) {
+			throw new AccessDeniedException('This user does not have access to this section.');
+			}
+
+			return $this->render('@FOSUser/Profile/show.html.twig', array(
+			'user' => $user,
+			));
+		}
+
+		/**
 		 * Show a form allowing to edit the current User
+		 *
+		 * @Route("/profile/edit", name="user_profile_edit")
 		 *
 		 * @param Request $request
 		 *

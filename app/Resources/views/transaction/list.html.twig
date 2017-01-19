@@ -15,7 +15,7 @@
 			{% for transaction in list_open %}
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<a href="/transaction/show/{{ transaction.id }}">{{ transaction.task.title }}</a>
+						<a href="{{ path('transaction_show', {'id': transaction.id}) }}">{{ transaction.task.title }}</a>
 					</div>
 					<div class="panel-body">
 						<p>Utilisateurs concernés :</p>
@@ -36,7 +36,7 @@
 			{% for transaction in list_validated %}
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<a href="/transaction/show/{{ transaction.id }}">{{ transaction.task.title }}</a>
+						<a href="{{ path('transaction_show', {'id': transaction.id}) }}">{{ transaction.task.title }}</a>
 					</div>
 					<div class="panel-body">
 						<p>Utilisateurs concernés :</p>
@@ -57,7 +57,7 @@
 			{% for transaction in list_done %}
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<a href="/transaction/show/{{ transaction.id }}">{{ transaction.task.title }}</a>
+						<a href="{{ path('transaction_show', {'id': transaction.id}) }}">{{ transaction.task.title }}</a>
 					</div>
 					<div class="panel-body">
 						<p>Utilisateurs concernés :</p>

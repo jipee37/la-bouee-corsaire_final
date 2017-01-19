@@ -130,7 +130,7 @@
 		/**
 		 * Show a form allowing creation of a new Message associated to the Task identified by the given ID
 		 *
-		 * @Route("/new/{id}")
+		 * @Route("/new/{id}", name="message_new")
 		 *
 		 * @param int $id ID of the associated Task
 		 *
@@ -183,7 +183,7 @@
 		/**
 		 * Show a form allowing creation of a new Message in answer to an existing one
 		 *
-		 * @Route("/answer/{id}")
+		 * @Route("/answer/{id}", name="message_answer")
 		 *
 		 * @param int $id ID of the existing Message
 		 *

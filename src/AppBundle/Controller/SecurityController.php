@@ -8,6 +8,7 @@
 	use FOS\UserBundle\Event\FormEvent;
 	use FOS\UserBundle\FOSUserEvents;
 	use FOS\UserBundle\Model\UserManagerInterface;
+	use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 	use Symfony\Bundle\FrameworkBundle\Controller\Controller as BaseController;
 	use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 	use Symfony\Component\Form\FormInterface;
@@ -23,6 +24,8 @@
 
 		/**
 		 * Show forms allowing to connect an existing User or create a new one
+		 *
+		 * @Route("/login", name="user_login")
 		 *
 		 * @param Request $request
 		 *

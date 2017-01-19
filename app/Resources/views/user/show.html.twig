@@ -29,9 +29,9 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-3" align="center">
-							<img alt="avatar" src="../../../../images/man.png"
+							<img alt="avatar" src="{{ asset('images/man.png') }}"
 							 class="avatar img-circle img-responsive">
-							<a href="/profile/edit" data-original-title="Edition du profil"
+							<a href="{{ path('user_profile_edit') }}" data-original-title="Edition du profil"
 							 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
 								<i class="glyphicon glyphicon-edit"></i>
 								Édition
@@ -83,10 +83,10 @@
 				</div>
 
 				<div class="panel-footer">
-					<a href="/task/list-owned" class="btn btn-default">Mes Besoins</a>
-					<a href="/transaction/list" class="btn btn-default">Mes Transactions</a>
+					<a href="{{ path('task_list_owned') }}" class="btn btn-default">Mes Besoins</a>
+					<a href="{{ path('transaction_list') }}" class="btn btn-default">Mes Transactions</a>
 					<span class="pull-right">
-						<a href="/logout" data-original-title="Deconnexion"
+						<a href="{{ logout_path() }}" data-original-title="Deconnexion"
 						 data-toggle="tooltip" type="button" class="btn btn-info btn-md">
 							<i class="glyphicon glyphicon-log-out"></i>
 							Déconnexion

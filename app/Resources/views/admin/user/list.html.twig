@@ -11,7 +11,7 @@
 		{% for user in users %}
 
 			<div class='col-lg-3 col-md-4 col-sm-6'>
-				<a href='/admin/user/show/{{ user.id }}'>
+				<a href="{{ path('admin_user_show', {'id': user.id}) }}">
 					<div class='panel panel-default'>
 						<div class="panel-heading">{{ user.username }}</div>
 						<div class="panel-body">
@@ -27,6 +27,6 @@
 
 	</div>
 
-	<a href='/admin/'>Retour au panneau d’administration</a>
+	<a href="{{ path('admin_home') }}">Retour au panneau d’administration</a>
 
 {% endblock %}

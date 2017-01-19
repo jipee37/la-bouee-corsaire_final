@@ -9,8 +9,8 @@
 			<span class="icon-bar"></span>
 		</button>
 		<span class="navbar-brand">
-			<img src="/images/logo_32x32.png" />
-			<a href="/">La Bouée Corsaire</a>
+			<img src="{{ asset('images/logo_32x32.png') }}" />
+			<a href="{{ path('homepage') }}">La Bouée Corsaire</a>
 		</span>
 	</div>
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -18,16 +18,16 @@
 			<li>
 				{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 					{% if is_granted('ROLE_ADMIN') %}
-						<a class="btn btn-primary btn-lg" href="/admin">
+						<a class="btn btn-primary btn-lg" href="{{ path('admin_home') }}">
 							Panneau d’administration
 						</a>
 					{% else %}
-						<a class="btn btn-primary btn-lg" href="/profile">
+						<a class="btn btn-primary btn-lg" href="{{ path('user_profile') }}">
 							Mon Profil
 						</a>
 					{% endif %}
 				{% else %}
-					<a class="btn btn-primary btn-lg" href="/login">
+					<a class="btn btn-primary btn-lg" href="{{ path('user_login') }}">
 						Connexion/Inscription
 					</a>
 				{% endif %}

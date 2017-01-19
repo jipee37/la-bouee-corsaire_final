@@ -29,9 +29,9 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-3" align="center">
-							<img alt="avatar" src="../../../../images/man.png"
+							<img alt="avatar" src="{{ asset('images/man.png') }}"
 							 class="avatar img-circle img-responsive">
-							<a href="/admin/user/edit/{{ user.id }}" data-original-title="Edition du profil"
+							<a href="{{ path('admin_user_edit', {'id': user.id}) }}" data-original-title="Edition du profil"
 							 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
 								<i class="glyphicon glyphicon-edit"></i>
 								Édition
@@ -86,6 +86,6 @@
 		</div>
 	</div>
 
-	<a href='/admin/user/list'>Retour à la liste des Utilisateurs</a>
+	<a href="{{ path('admin_user_list') }}">Retour à la liste des Utilisateurs</a>
 
 {% endblock body %}

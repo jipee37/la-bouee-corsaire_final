@@ -27,7 +27,7 @@
 						Message envoyé à {{ message.dest }}
 						par {{ message.author }}
 						le {{ message.date.format('j/m/Y à G:i') }}
-						au sujet de <a href="/task/show/{{ message.transaction.task.id }}">
+						au sujet de <a href="{{ path('task_show', {'id': message.transaction.task.id}) }}">
 							{{ message.transaction.task.title }}
 						</a>
 					</h1>
@@ -36,11 +36,11 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-3" align="center">
-							<img alt="avatar" src="/images/message.png"
+							<img alt="avatar" src="{{ asset('images/message.png') }}"
 							 class="avatar img-responsive">
 
 								{% if user == message.dest %}
-									<a href="/message/answer/{{ message.id }}" data-original-title="Répondre"
+									<a href="{{ path('message_answer', {'id': message.id}) }}" data-original-title="Répondre"
 									 data-toggle="tooltip" type="button" class="btn btn-md btn-warning">
 										<i class="glyphicon glyphicon-edit"></i>
 										Répondre
@@ -60,6 +60,6 @@
 		</div>
 	</div>
 
-	<p><a href="/transaction/show/{{ message.transaction.id }}">Retour à la Transaction</a></p>
+	<p><a href="{{ path('transaction_show', {'id': message.transaction.id}) }}">Retour à la Transaction</a></p>
 
 {% endblock %}
