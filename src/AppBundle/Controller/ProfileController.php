@@ -20,23 +20,6 @@
 	class ProfileController extends BaseController {
 
 		/**
-		* Show the user.
-		*
-		* @Route("/profile", name="user_profile")
-		*
-		*/
-		public function showAction() {
-			$user = $this->getUser();
-			if (!is_object($user) || !$user instanceof UserInterface) {
-			throw new AccessDeniedException('This user does not have access to this section.');
-			}
-
-			return $this->render('@FOSUser/Profile/show.html.twig', array(
-			'user' => $user,
-			));
-		}
-
-		/**
 		 * Show a form allowing to edit the current User
 		 *
 		 * @Route("/profile/edit", name="user_profile_edit")
